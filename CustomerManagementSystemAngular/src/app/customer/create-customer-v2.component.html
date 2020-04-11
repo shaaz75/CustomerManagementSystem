@@ -1,0 +1,61 @@
+<form [formGroup]="customerForm" (ngSubmit)="onSubmit()" class="form-horizontal">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{pageTitle}}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="form-group"
+        [ngClass]="{'has-error':formErrors.Name}">
+    <label class="col-sm-2 control-label" for="Name">Name</label>
+    <div class="col-sm-8">
+      <input id="Name" type="text" class="form-control" formControlName="Name"
+      placeholder="Name" formControlName="Name" (blur)="logValidationErrors()">
+      <!-- <label>{{NameLength}}</label> -->
+      <span class="help-block" *ngIf="formErrors.Name">
+          {{formErrors.Name}}
+      </span>
+    </div>
+  </div>
+
+  
+  <!-- Gender input element -->
+  <div class="form-group" [ngClass]="{'has-error': formErrors.Gender}">
+    <label class="col-sm-2 control-label" for="Gender">Gender</label>
+    <div class="col-sm-8">
+      <input id="Gender" type="text" class="form-control" placeholder="Gender"
+              formControlName="Gender" (blur)="logValidationErrors()">
+      <span class="help-block" *ngIf="formErrors.Gender">
+        {{formErrors.Gender}}
+      </span>
+    </div>
+  </div>
+
+   <!-- Email input element -->
+   <div class="form-group" [ngClass]="{'has-error': formErrors.Email}">
+    <label class="col-sm-2 control-label" for="Email">Email</label>
+    <div class="col-sm-8">
+      <input id="Email" type="text" class="form-control" placeholder="Email"
+              formControlName="Email" (blur)="logValidationErrors()">
+      <span class="help-block" *ngIf="formErrors.Email">
+        {{formErrors.Email}}
+      </span>
+    </div>
+  </div>
+  
+      </div>
+      <div class="panel-footer">
+          <div class="btn-toolbar"><button class="btn btn-primary" type="submit" [disabled]="customerForm.invalid">
+            Save
+          </button>
+            <button class="btn btn-primary" type="button"
+              (click)="onLoadDataClick()">Load Data</button>
+              <button class="btn btn-primary" type="button"
+              (click)="onDisableClick()">Disable Controls</button>
+              <button class="btn btn-primary" type="button"
+              (click)="onResetClick()">Reset</button>
+            
+            </div>
+        
+      </div>
+    </div>
+  </form>

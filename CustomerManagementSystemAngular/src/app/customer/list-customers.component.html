@@ -1,0 +1,18 @@
+<div class="table-responsive">
+    <table class="table table-bordered" *ngIf="customers && customers.length">
+      <thead>
+        <tr class="bg-primary">
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let customer of customers">
+          <td>{{ customer.Name }}</td>
+          <td>{{ customer.Gender }}</td>
+          <td>{{ customer.Email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

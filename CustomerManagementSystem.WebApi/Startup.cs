@@ -37,6 +37,16 @@ namespace CustomerManagementSystem
 					}
 				});
 
+
+			services.AddCors(options =>
+			{
+				options.AddPolicy("AllowAll",
+						  p => p.AllowAnyOrigin()
+								.AllowAnyHeader()
+								.AllowAnyMethod()
+								.AllowCredentials());
+			});
+
 			services.AddDbContext<CustomerContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CustomerConnectionString")));
 		}
 
@@ -46,6 +56,7 @@ namespace CustomerManagementSystem
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
+				app.UseCors("AllowAll");
 			}
 
 			app.UseMvc();
