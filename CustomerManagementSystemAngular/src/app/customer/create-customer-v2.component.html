@@ -6,7 +6,7 @@
       <div class="panel-body">
         <div class="form-group"
         [ngClass]="{'has-error':formErrors.Name}">
-    <label class="col-sm-2 control-label" for="Name">Name</label>
+    <label class="col-sm-2 control-label" for="Name"><span class="glyphicon glyphicon-user"></span></label>
     <div class="col-sm-8">
       <input id="Name" type="text" class="form-control" formControlName="Name"
       placeholder="Name" formControlName="Name" (blur)="logValidationErrors()">
@@ -20,7 +20,7 @@
   
   <!-- Gender input element -->
   <div class="form-group" [ngClass]="{'has-error': formErrors.Gender}">
-    <label class="col-sm-2 control-label" for="Gender">Gender</label>
+    <label class="col-sm-2 control-label" for="Gender"><span class="glyphicon glyphicon-star-empty"></span></label>
     <div class="col-sm-8">
       <input id="Gender" type="text" class="form-control" placeholder="Gender"
               formControlName="Gender" (blur)="logValidationErrors()">
@@ -32,7 +32,7 @@
 
    <!-- Email input element -->
    <div class="form-group" [ngClass]="{'has-error': formErrors.Email}">
-    <label class="col-sm-2 control-label" for="Email">Email</label>
+    <label class="col-sm-2 control-label" for="Email"><span class="glyphicon glyphicon-envelope"></span></label>
     <div class="col-sm-8">
       <input id="Email" type="text" class="form-control" placeholder="Email"
               formControlName="Email" (blur)="logValidationErrors()">
@@ -45,15 +45,8 @@
       </div>
       <div class="panel-footer">
           <div class="btn-toolbar"><button class="btn btn-primary" type="submit" [disabled]="customerForm.invalid">
-            Save
-          </button>
-            <button class="btn btn-primary" type="button"
-              (click)="onLoadDataClick()">Load Data</button>
-              <button class="btn btn-primary" type="button"
-              (click)="onDisableClick()">Disable Controls</button>
-              <button class="btn btn-primary" type="button"
-              (click)="onResetClick()">Reset</button>
-            
+            Save <span class="glyphicon glyphicon-save"></span>
+          </button>   
             </div>
         
       </div>

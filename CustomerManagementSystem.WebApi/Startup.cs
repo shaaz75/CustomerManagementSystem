@@ -46,7 +46,6 @@ namespace CustomerManagementSystem
 								.AllowAnyMethod()
 								.AllowCredentials());
 			});
-
 			services.AddDbContext<CustomerContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CustomerConnectionString")));
 		}
 
