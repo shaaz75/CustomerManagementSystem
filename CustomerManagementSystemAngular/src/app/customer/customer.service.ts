@@ -31,6 +31,7 @@ export class CustomerService {
     }
 
     addCustomer(customer: ICustomer): Observable<ICustomer> {
+        customer.CustomerId=0;
         return this.httpClient.post<ICustomer>(this.baseUrl, customer, {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json'

@@ -33,15 +33,15 @@ formErrors = {
 
 // Include required error message for phone form control
 validationMessages = {
-  'name': {
+  'Name': {
     'required': 'Name is required.',
     'minlength': 'Name must be greater than 2 characters',
     'maxlength': 'Name must be less than 10 characters.',
   },
-  'gender': {
+  'Gender': {
     'required': 'Gender is required.'
   },
-  'email': {
+  'Email': {
     'required': 'Email is required.',
     'emailDomain': 'Email domian should be niksaj.com'
   }
@@ -74,7 +74,7 @@ validationMessages = {
       Name: ['', [Validators.required,
       Validators.minLength(2), Validators.maxLength(10)]],
       Gender: ['', [Validators.required]],
-      Email: ['', [Validators.required,CustomValidators.emailDomain('niksaj.com')]],
+      Email: ['', [Validators.required]],
     });
 
     this.customerForm.valueChanges.subscribe((data)=>{
@@ -121,7 +121,6 @@ getCustomer(CustomerId: number) {
   logValidationErrors(group: FormGroup = this.customerForm): void {
     Object.keys(group.controls).forEach((key: string) => {
       const abstractControl = group.get(key);
-  
       this.formErrors[key] = '';
       // abstractControl.value !== '' (This condition ensures if there is a value in the
       // form control and it is not valid, then display the validation error)
